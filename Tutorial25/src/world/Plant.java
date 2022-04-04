@@ -1,5 +1,9 @@
 package world;
 
+class Something {
+
+}
+
 public class Plant {
     // Bad practice
     // Don't display public
