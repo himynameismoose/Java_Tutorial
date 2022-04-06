@@ -1,41 +1,32 @@
 package Tutorial33;
 
-/** Anonymous Classes **/
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-class Machine {
-    public void start() {
-        System.out.println("Starting machine ...");
-    }
-}
-
-interface Plant {
-    public void grow();
-}
+/** Reading Text Files **/
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        String filename = "src/Tutorial33/example.txt";
 
-        // Anonymous class
-        Machine machine1 = new Machine() {
-            // Override methods
-            @Override
-            public void start() {
-                System.out.println("Camera snapping ...");
-            }
-        };
+        File textFile = new File(filename);
 
-        machine1.start();
+        Scanner in = new Scanner(textFile);
 
-        // Not legal, cannot instantiate interfaces
-        // Plant plant1 = new Plant();
-        Plant plant1 = new Plant() {
-            // implement methods --- override
-            @Override
-            public void grow() {
-                System.out.println("Plant growing ...");
-            }
-        };
+        // Read file
+        int value = in.nextInt();
+        System.out.println("Read value: " + value);
 
-        plant1.grow();
+        in.nextLine();
+
+        int count = 2;
+        while (in.hasNextLine()) {
+            String line = in.nextLine();
+            System.out.println(count + ": " + line);
+            count++;
+        }
+
+        in.close(); // close file
     }
 }
