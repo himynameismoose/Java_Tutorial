@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws FileNotFoundException {
+        // file name
         String filename = "src/Tutorial33/example.txt";
 
         File textFile = new File(filename);
