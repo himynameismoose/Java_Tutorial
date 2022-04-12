@@ -57,7 +57,5 @@ public class App {
         System.out.println("Queue 2 poll: " + q2.poll()); // removes item (similar to remove)
         System.out.println("Queue 2 poll: " + q2.poll());
         System.out.println("Queue 2 poll: " + q2.poll()); // null
-
-        ///////////
     }
 }
